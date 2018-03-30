@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="http://127.0.0.1:8888/css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <title>Login</title>
+</head>
+<body>
+    <h1>Projecte Othello</h1>
+    <!-- Button to open the modal login form -->
+    <div class="menu-button">
+    <button onclick="document.getElementById('login').style.display='block'"  >Login</button>
+    <button onclick="document.getElementById('registre').style.display='block'" >Registre</button>
+    </div>
+
+    <!-- The Modal -->
+    <div id="login" class="modal">
+        <span onclick="document.getElementById('login').style.display='none'" 
+        class="close" title="Close Modal">&times;</span>
+
+        <!-- Modal Content -->
+        <form class="modal-content animate" action="/login" method="post">
+            <h1>Login</h1>
+            <div class="imgcontainer">
+                <img src="othelloLogo" alt="Avatar" class="avatar">
+                </div>
+
+                <div class="container">
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="email" name="email_login" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Password" name="password_login" required>
+                </div>
+
+                <div class="container" style="background-color:#f1f1f1">
+                <button type="submit" class="acceptbtn" value="submit_login">Accept</button>
+                <button type="button" onclick="document.getElementById('login').style.display='none'" class="cancelbtn">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- The Modal -->
+    <div id="registre" class="modal">
+            <span onclick="document.getElementById('registre').style.display='none'" 
+            class="close" title="Close Modal">&times;</span>
+    
+            <!-- Modal Content -->
+            <form class="modal-content animate" action="/login" method="post">
+                <h1>Registre</h1>
+                <div class="imgcontainer">
+                    <img src="othelloLogo" alt="Avatar" class="avatar">
+                    </div>
+    
+                    <div class="container">
+                    <label for="email"><b>Email</b></label>
+                    <input type="text" placeholder="email" name="email_registre" required>
+    
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Password" name="password_registre" required>
+                    </div>
+    
+                    <div class="container" style="background-color:#f1f1f1">
+                    <button type="submit" class="acceptbtn" value="submit_registre">Accept</button>
+                    <button type="button" onclick="document.getElementById('registre').style.display='none'" class="cancelbtn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    
+    <script>
+        // Get the modal
+        var modal_login = document.getElementById('login');
+        var modal_registre = document.getElementById('registre');
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal_login) {
+                modal_login.style.display = "none";
+            }
+            if (event.target == modal_registre) {
+                modal_registre.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

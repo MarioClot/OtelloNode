@@ -1,0 +1,40 @@
+{
+    "users": [
+        {
+            "email": "carlos@gmail.com",
+            "password": "1234"
+        },
+        {
+            "email": "mario@gmail.com",
+            "password": "5678"
+        },
+        {
+            "email": "aa",
+            "password": "aa"
+        },
+        {
+            "email": "esteve",
+            "password": "12"
+        },
+        {
+            "email": "aaa",
+            "password": "123"
+        },
+        {
+            "email": "david",
+            "password": "1234"
+        },
+        {
+            "email": "prova",
+            "password": "prova"
+        },
+        {
+            "email": "ca",
+            "password": "ca"
+        },
+        {
+            "email": "ee",
+            "password": "ee"
+        }
+    ]
+}
