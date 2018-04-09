@@ -21,9 +21,13 @@ var manegadorPeticions = require("./manegadorPeticions");
 var manegadors = {};
 manegadors["/"] = manegadorPeticions.inici;
 manegadors["/login"] = manegadorPeticions.login;
-manegadors["/partida"] = manegadorPeticions.partida;
 manegadors["/css"] = manegadorPeticions.css;
+manegadors["/login.js"] = manegadorPeticions.scriptLogin;
 manegadors["/othelloLogo"] = manegadorPeticions.othelloLogo;
 manegadors["error"] = manegadorPeticions.error400;
+manegadors["/ajax.js"] = manegadorPeticions.ajax;
+manegadors["/partida"] = manegadorPeticions.partida;
+manegadors["/taulell"] = manegadorPeticions.taulell;
+manegadors["/partida.js"] = manegadorPeticions.scriptPartida;
 
 server.iniciar(encaminador.encaminar, manegadors);

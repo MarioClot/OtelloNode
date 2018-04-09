@@ -115,6 +115,8 @@ function consultarUsuariJSON(usuari, password) {
     }
 }
 
+
+
 exports.loadResources = loadResources;
 exports.consultarUsuariMongoDB = consultarUsuariMongoDB;
 exports.registrarUsuariMongoDB = registrarUsuariMongoDB;
