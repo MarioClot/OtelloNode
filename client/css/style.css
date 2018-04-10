@@ -139,7 +139,7 @@ span.psw {
     width: 4em;
     height: 4em;
 }
-/* 
+/*
 #game-board > table .cell.attackable
 {
   cursor: pointer;
@@ -148,23 +148,24 @@ span.psw {
 {
   background: #cc0;
 }
-
-#game-board > table .cell > .disc
+*/
+#gameboard > table .cell > .disc
 {
   display: inline-block;
-  width: 2em;
-  height: 2em;
+  width: 50%;
+  height: 50%m;
   border-radius: 1em;
-  margin: 0.25em;
+  margin: 1em;
 }
-#game-board > table .cell.white > .disc
+#gameboard > table .cell.blanca > .disc
 {
   background: #fff;
 }
-#game-board > table .cell.black > .disc
+#gameboard > table .cell.negra > .disc
 {
   background: #000;
 }
+/*
 #game-board > table .cell.attackable > .disc
 {
   opacity: 0.2;

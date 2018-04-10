@@ -65,8 +65,13 @@ function ajaxFunction(contingut) {
                                 // console.log("posicio x: " + posicio[0]);
                                 // console.log("posicio y: " + posicio[1]);
                                 /////
+                                // document.getElementById("cell_" + posicio[0] + "_" +
+                                // posicio[1]).innerHTML = attrValueImatge;
+                                
                                 document.getElementById("cell_" + posicio[0] + "_" +
-                                posicio[1]).innerHTML = attrValueImatge;
+                                posicio[1]).setAttribute("class", "cell " + attrValueImatge);
+                                // document.getElementById("cell_" + posicio[0] + "_" +
+                                // posicio[1]).setAttribute("class", attrValueImatge);
                             
                             }
                         }
