@@ -26,6 +26,7 @@ var path = require('path');
 
 var ruta = "";
 var jugadors = [];
+var partides = [];
 var usuari_logat = false;
 var jugadors_senars = false;
 var partida;
@@ -38,6 +39,7 @@ function inici(response) {
 }
 
 function login(response, consulta, post) {
+   
     var user_registre = querystring.parse(post)['email_registre'];
     var password_registre = querystring.parse(post)['password_registre'];
     var user_login = querystring.parse(post)['email_login'];
@@ -70,6 +72,7 @@ function login(response, consulta, post) {
                     Location: "/partida"
                 });
                 response.end();
+                
             } else {
                 console.log("Login incorrecte");
                 carregarLogin()
@@ -78,22 +81,26 @@ function login(response, consulta, post) {
     } else {
         carregarLogin();
     }
+    
 
 }
 
 function partida(response, consulta, post) {
     console.log("manegador de la petició 'partida' s'ha cridat.");
     if (usuari_logat){
+        usuari_logat=false;
         Utility.loadResources(response, "html/partida.html", 200, 'text/html');
         if (jugadors.length % 2) {
             jugadors_senars = true;
-            console.log("jugadors senars, esperar");
         } else {
-            console.log("jugadors parells, partida creada");
+            console.log("jugadors parells");
             jugadors_senars = false;
             partida = new Partida(jugadors[jugadors.length - 1], jugadors[jugadors.length - 2]);
+            partides.push(partida);
+            console.log(partida.jugador1.email+" "+partida.jugador2.email);
             partida.crearPartida();
         }
+
     } else {
         response.writeHead(302, {
             Location: "/login"

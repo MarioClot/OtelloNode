@@ -12,7 +12,7 @@
  * 4.3 MongoDB
  */
 function encaminar(manegadorPeticions, pathname, consulta, response, post) {
-    console.log('preparat per encaminar una petició a ...' + pathname);
+    //console.log('preparat per encaminar una petició a ...' + pathname);
     if (typeof manegadorPeticions[pathname] === 'function') {
         return manegadorPeticions[pathname](response, consulta, post);
     }else {
