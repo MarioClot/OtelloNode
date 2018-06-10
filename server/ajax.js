@@ -19,7 +19,7 @@ function inici() {
             }
         }
     }
-
+    var id = "";
     var cell = document.querySelectorAll('.cell');
     for (var i = 0; i < cell.length; i++) {
         cell[i].addEventListener('click', callback, false);
@@ -29,10 +29,12 @@ function inici() {
         ajaxFunction(id);
     }
 
-    // setInterval(ajaxFunction(id), 1000);
+    setInterval(callback(), 1000);
 }
 
 function ajaxFunction(contingut) {
+    console.log(contingut);
+    
     var contingut_list = contingut.split("_");
     //callback
     xhr.onreadystatechange = function () {
@@ -45,11 +47,11 @@ function ajaxFunction(contingut) {
                     if (key == "imatge") {
                         var attrNameImatge = key;
                         var attrValueImatge = obj[attrNameImatge];
-                        // console.log(attrValueImatge);
+                         console.log(attrValueImatge);
                     } if (key == "posicio") {
                         var attrNamePosicio = key;
                         var attrValuePosicio = obj[attrNamePosicio];
-                        // console.log(attrValuePosicio);
+                         console.log(attrValuePosicio);
                         for (var posicio in attrValuePosicio) {
                             if (posicio == "x") {
                                 var attrNameX = posicio;
@@ -70,8 +72,8 @@ function ajaxFunction(contingut) {
                                 
                                 document.getElementById("cell_" + posicio[0] + "_" +
                                 posicio[1]).setAttribute("class", "cell " + attrValueImatge);
-                                // document.getElementById("cell_" + posicio[0] + "_" +
-                                // posicio[1]).setAttribute("class", attrValueImatge);
+                                 //document.getElementById("cell_" + posicio[0] + "_" +
+                                 //posicio[1]).setAttribute("class", attrValueImatge);
                             
                             }
                         }
@@ -81,14 +83,13 @@ function ajaxFunction(contingut) {
 
             //////
             data = JSON.parse(xhr.responseText);
-            // document.getElementById("cell_" + contingut_list[1] + "_" +
-            //     contingut_list[2]).innerHTML = data;
+            //document.getElementById("cell_" + contingut_list[1] + "_" +
+            //    contingut_list[2]).innerHTML = data;
         }
     };
 
     xhr.open("GET", "taulell?x=" + contingut_list[1] + "&y=" + contingut_list[2], true);
     xhr.send(null);
 }
-
 
 window.addEventListener("load", inici, true);

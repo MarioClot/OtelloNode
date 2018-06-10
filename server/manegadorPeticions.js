@@ -155,7 +155,7 @@ function taulell(response, consulta) {
         var posicio = new Posicio(consulta.x, consulta.y);
         var peça = new Peça("blanca", posicio);
         partida.taulell.setPeça(peça);
-
+        console.log("Penis: "+JSON.stringify(partida.taulell.getPeces()));
         response.write(JSON.stringify(partida.taulell.getPeces()));
         response.end();
     }

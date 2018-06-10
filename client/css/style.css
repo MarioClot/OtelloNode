@@ -161,6 +161,17 @@ span.psw {
 {
   background: #fff;
 }
+
+#gameboard > table .cell.blanca
+{
+  background: #fff;
+}
+
+#gameboard > table .cell.negra
+{
+  background: #000;
+}
+
 #gameboard > table .cell.negra > .disc
 {
   background: #000;
