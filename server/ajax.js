@@ -29,7 +29,7 @@ function inici() {
         ajaxFunction(id);
     }
 
-    setInterval(callback(), 1000);
+    //setInterval(callback(), 1000);
 }
 
 function ajaxFunction(contingut) {
